@@ -17,8 +17,8 @@ user5 = User.create!(email: 'spongebob@example.com', first_name: 'SpongeBob', la
 user6 = User.create!(email: 'patrick@example.com', first_name: 'Patrick', last_name: 'Star')
 user7 = User.create!(email: 'finn@example.com', first_name: 'Finn', last_name: 'The Human')
 user8 = User.create!(email: 'jake@example.com', first_name: 'Jake', last_name: 'The Dog')
-user9 = User.create!(email: 'luffy@example.com', first_name: 'Monkey D.', last_name: 'Luffy')
-user10 = User.create!(email: 'zoro@example.com', first_name: 'Roronoa', last_name: 'Zoro')
+user9 = User.create!(email: 'luffy@example.com', first_name: 'Luffy', last_name: 'Monkey D.')
+user10 = User.create!(email: 'zoro@example.com', first_name: 'Zoro', last_name: 'Roronoa')
 
 
 

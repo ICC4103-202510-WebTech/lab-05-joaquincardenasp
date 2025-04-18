@@ -1,0 +1,18 @@
+<h1>Chat #<%= @chat.id %> Details</h1>
+
+<% sender = User.find(@chat.sender_id) %>
+<p><strong>Sender:</strong> <%= sender.first_name %> <%= sender.last_name %> (ID: <%= sender.id %>)</p>
+<% receiver = User.find(@chat.receiver_id) %>
+<p><strong>Receiver:</strong> <%= receiver.first_name %> <%= receiver.last_name %> (ID: <%= receiver.id %>)</p>
+<p><strong>Created At:</strong> <%= @chat.created_at.strftime("%B %d, %Y %H:%M") %></p>
+<hr>
+<h2>Messages</h2>
+<ul>
+  <% Message.where(chat_id: @chat.id).each do |message| %>
+    <li>
+      <strong><%= User.find(message.user_id).first_name %>:</strong>
+      <%= message.body %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to 'Back to Chats', chats_path, class: 'btn btn-primary' %>

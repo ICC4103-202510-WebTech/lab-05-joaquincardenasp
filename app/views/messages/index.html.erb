@@ -1,0 +1,26 @@
+<h1> Messages tab </h1>
+<p> Welcome to the messages page. </p>
+
+<table class="table"> 
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Chat</th>
+      <th scope="col">Sender</th>
+      <th scope="col">Message</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @messages.each do |message| %>
+    <tr>
+      <th scope="row"><%= message.id %></th>
+      <td><%= message.chat_id %></td>
+      <td><%= message.user_id %></td>
+      <td><%= message.body %></td>
+      <td><%= message.created_at %></td>
+      <td><%= link_to 'Show', message_path(message) %></td>
+    </tr>
+  <% end %> 
+  </tbody>
+</table>
