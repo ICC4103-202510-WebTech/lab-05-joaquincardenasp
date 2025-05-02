@@ -1,0 +1,20 @@
+<%= form_with model: @message do |form| %>
+    <div class= "mb-3">
+    <%= form.label :chat_id, 'Chat' %>
+    <%= form.select :chat_id, Chat.all.map { |c| ["Chat##{c.id}", c.id]}, {}, class: 'form-select' %>
+    </div>
+
+    <div class= "mb-3">
+    <%= form.label :user_id, 'Sender' %>
+    <%= form.select :user_id, User.all.map { |u| [u.first_name, u.id] }, {}, class: "form-select" %>
+  </div>
+
+    <div class= "mb-3">
+    <%= form.label :body, 'Message' %>
+    <%= form.text_area :body, class: 'form-control' %>
+    </div>
+
+    <div class="actions">
+        <%= form.submit 'Send Message', class: 'btn btn-primary' %>
+    </div>
+<% end %>

@@ -1,0 +1,11 @@
+<%= form_with model: @chat do |form| %>
+    <div class= "field">
+        <%= form.label :sender_id, 'Sender' %>
+        <%= form.select :sender_id, User.all.map { |u| [u.first_name, u.id]}, {}, class: 'form-select' %>
+    </div>
+    <div class= "field">
+        <%= form.label :receiver_id, 'Receiver' %>
+        <%= form.select :receiver_id, User.all.map { |u| [u.first_name, u.id]}, {}, class: 'form-select' %>
+    </div>
+    <%= form.submit 'Create Chat', class: 'btn btn-primary' %>
+<% end %>
