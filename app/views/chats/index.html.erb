@@ -8,6 +8,7 @@
       <th scope="col">Receiver</th>
       <th scope="col">Date</th>
       <th scope="col">Details</th>
+      <th scope="col">Edit</th>
     </tr>
   </thead>
   <tbody>
@@ -18,6 +19,7 @@
       <td><%= chat.receiver_id %></td>  
       <td><%= chat.created_at %></td>
       <td><%= link_to 'Show', chat_path(chat) %></td>
+      <td><%= link_to 'Edit', edit_chat_path(chat) %></td>
     </tr>
   <% end %> 
   </tbody>

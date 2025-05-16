@@ -1,0 +1,16 @@
+<h1> Edit Chat </h1>
+<p> Please fill in the form below to edit the chat. </p>
+<% if @chat.errors.any? %>
+  <div class="alert alert-danger">
+    <h4>There were some errors:</h4>
+    <ul>
+      <% @chat.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<%= render partial: 'form' %>
+
+<p> <%= link_to 'Back', chats_path %> </p>
+

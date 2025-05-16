@@ -2,4 +2,25 @@
 <p> <strong>First Name:</strong> <%= @user.first_name %> </p>
 <p> <strong>Last Name:</strong> <%= @user.last_name %> </p>
 <p> <strong>Email:</strong> <%= @user.email %> </p>
-<%= link_to 'Back to Users', users_path, class: 'btn btn-primary' %>
+<hr>
+<h2> Chats </h2>
+<ul>
+  <% @user.chats.each do |chat| %>
+    <li>
+      <strong>Chat ID:</strong> <%= chat.id %>
+      <ul>
+        <% Message.where(chat_id: chat.id, user_id: @user.id).each do |message| %>
+          <li>
+            <strong>Message:</strong> <%= message.body %>
+            <em>(Sent at: <%= message.created_at.strftime("%B %d, %Y %H:%M") %>)</em>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>
+<br>
+<div class='actions'>
+    <%= link_to 'Edit', edit_user_path(@user), class: 'btn btn-secondary' %>
+    <%= link_to 'Back to Users', users_path, class: 'btn btn-primary' %>
+</div>

@@ -15,4 +15,7 @@
     </li>
   <% end %>
 </ul>
-<%= link_to 'Back to Chats', chats_path, class: 'btn btn-primary' %>
+<div class='actions'>
+  <%= link_to 'Edit', edit_chat_path(@chat), class: 'btn btn-secondary' %>
+  <%= link_to 'Back to Chats', chats_path, class: 'btn btn-primary' %>
+</div>

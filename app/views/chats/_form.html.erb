@@ -7,5 +7,7 @@
         <%= form.label :receiver_id, 'Receiver' %>
         <%= form.select :receiver_id, User.all.map { |u| [u.first_name, u.id]}, {}, class: 'form-select' %>
     </div>
-    <%= form.submit 'Create Chat', class: 'btn btn-primary' %>
+    <div class= 'actions'>
+        <%= form.submit %>
+    </div>
 <% end %>

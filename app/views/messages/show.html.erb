@@ -5,5 +5,19 @@
 <p><strong>Sender:</strong> <%= sender.first_name %> <%= sender.last_name %> (ID: <%= sender.id %>)</p>
 <p><strong>Body:</strong> <%= @message.body %></p>
 <p><strong>Sent At:</strong> <%= @message.created_at.strftime("%B %d, %Y %H:%M") %></p>
-
+#Show the associated user and chat.
+<hr>
+<h2>Associated User</h2>
+<p><strong>User ID:</strong> <%= @message.user_id %></p>
+<p><strong>First Name:</strong> <%= sender.first_name %></p>
+<p><strong>Last Name:</strong> <%= sender.last_name %></p>
+<p><strong>Email:</strong> <%= sender.email %></p>
+<hr>
+<h2>Associated Chat</h2>
+<p><strong>Chat ID:</strong> <%= @message.chat_id %></p>
+<p><strong>Sender ID:</strong> <%= @message.chat.sender_id %></p>
+<p><strong>Receiver ID:</strong> <%= @message.chat.receiver_id %></p>
+<div class='actions'>
+<%= link_to 'Edit', edit_message_path(@message), class: 'btn btn-secondary' %>
 <%= link_to 'Back to Messages', messages_path, class: 'btn btn-primary' %>
+</div>

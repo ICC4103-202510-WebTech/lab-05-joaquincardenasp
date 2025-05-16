@@ -9,6 +9,8 @@
       <th scope="col">Sender</th>
       <th scope="col">Message</th>
       <th scope="col">Date</th>
+      <th scope="col">Show</th>
+      <th scope="col">Edit</th>
     </tr>
   </thead>
   <tbody>
@@ -20,6 +22,7 @@
       <td><%= message.body %></td>
       <td><%= message.created_at %></td>
       <td><%= link_to 'Show', message_path(message) %></td>
+      <td><%= link_to 'Edit', edit_message_path(message) %></td>
     </tr>
   <% end %> 
   </tbody>
